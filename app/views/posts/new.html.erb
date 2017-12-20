@@ -1,0 +1,7 @@
+<h2 class="text-center">New Post</h2>
+
+<%= form_for [@notice,@post] do |f| %>
+  <%= f.text_area :content%>
+  </p>
+  <%= f.submit "Submit", disable_with: "Submiting..."%>
+<% end %>
