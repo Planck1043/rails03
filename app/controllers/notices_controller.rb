@@ -1,6 +1,10 @@
 class NoticesController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
+  def indexa
+    @notices = Notice.all
+  end
+
   def index
     @notices = Notice.all
   end
@@ -10,7 +14,6 @@ class NoticesController < ApplicationController
   end
 
   def createa
-    binding.pry
 
     @notice = Notice.new(
       :title => params[:firstname],
@@ -46,12 +49,12 @@ class NoticesController < ApplicationController
     @notice = Notice.find(params[:id])
   end
 
-  def update
+  def updatea
     @notice = Notice.find(params[:id])
 
     if @notice.update(
-      :title => params[:notice][:title],
-      :text => params[:notice][:text]
+      :title => params[:firstname],
+      :text => params[:lastname]
       )
       redirect_to notice_path
     else

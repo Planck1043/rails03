@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :notices do
     collection do
+      get  :indexa
       post :createa
-
+      post  :updatea
     end
     resources :posts
   end
